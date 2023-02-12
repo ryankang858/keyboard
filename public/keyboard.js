@@ -29,7 +29,9 @@ const key24 = new Audio('./sounds/key24.mp3');
 let octave = 0;
 
 document.querySelector("#keyboard").addEventListener("click", (event) => {
-    if (event.target.matches("button")) {
+
+    if (event.target.matches(".key-btn")) {
+        console.log("keyboard clicked")
         const id = event.target.getAttribute("id");
         switch (id) {
             case "C-3":
