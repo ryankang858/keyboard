@@ -259,6 +259,8 @@ checkbox.addEventListener('change', function () {
 });
 
 document.querySelector("#keyboard").addEventListener("touchstart", (event) => {
+    event.preventDefault();
+
     if (event.target.matches(".key-btn")) {
         const id = event.target.getAttribute("id");
         console.log("keyboard keydown", id);
@@ -356,6 +358,8 @@ document.querySelector("#keyboard").addEventListener("touchstart", (event) => {
 });
 
 document.querySelector("#keyboard").addEventListener("touchend", (event) => {
+    event.preventDefault();
+
     if (event.target.matches(".key-btn")) {
         const id = event.target.getAttribute("id");
         console.log("keyboard keyup", id);
@@ -474,4 +478,8 @@ document.querySelector("#keyboard").addEventListener("touchend", (event) => {
                 break;
         }
     }
+});
+
+window.addEventListener("onContextMenu", (event) => {
+    return false;
 });
