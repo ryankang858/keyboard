@@ -28,11 +28,10 @@ const key24 = new Audio('./sounds/key24.mp3');
 
 let octave = 0;
 
-document.querySelector("#keyboard").addEventListener("click", (event) => {
-
+document.querySelector("#keyboard").addEventListener("mousedown", (event) => {
     if (event.target.matches(".key-btn")) {
-        console.log("keyboard clicked")
         const id = event.target.getAttribute("id");
+        console.log("keyboard keydown", id);
         switch (id) {
             case "C-3":
                 if (octave === 0) {
@@ -126,6 +125,126 @@ document.querySelector("#keyboard").addEventListener("click", (event) => {
     }
 });
 
+document.querySelector("#keyboard").addEventListener("mouseup", (event) => {
+    if (event.target.matches(".key-btn")) {
+        const id = event.target.getAttribute("id");
+        console.log("keyboard keyup", id);
+        switch (id) {
+            case "C-3":
+                if (octave === 0) {
+                    key13.pause();
+                    key13.currentTime = 0;
+                } else if (octave === 1) {
+                    key01.pause();
+                    key01.currentTime = 0;
+                }
+                break;
+            case "C#-3":
+                if (octave === 0) {
+                    key14.pause();
+                    key14.currentTime = 0;
+                } else if (octave === 1) {
+                    key02.pause();
+                    key02.currentTime = 0;
+                }
+                break;
+            case "D-3":
+                if (octave === 0) {
+                    key15.pause();
+                    key15.currentTime = 0;
+                } else if (octave === 1) {
+                    key03.pause();
+                    key03.currentTime = 0;
+                }
+                break;
+            case "D#-3":
+                if (octave === 0) {
+                    key16.pause();
+                    key16.currentTime = 0;
+                } else if (octave === 1) {
+                    key04.pause();
+                    key04.currentTime = 0; key04.play();
+                }
+                break;
+            case "E-3":
+                if (octave === 0) {
+                    key17.pause();
+                    key17.currentTime = 0;
+                } else if (octave === 1) {
+                    key05.pause();
+                    key05.currentTime = 0;
+                }
+                break;
+            case "F-3":
+                if (octave === 0) {
+                    key18.pause();
+                    key18.currentTime = 0;
+                } else if (octave === 1) {
+                    key06.pause();
+                    key06.currentTime = 0;
+                }
+                break;
+            case "F#-3":
+                if (octave === 0) {
+                    key19.pause();
+                    key19.currentTime = 0;
+                } else if (octave === 1) {
+                    key07.pause();
+                    key07.currentTime = 0;
+                }
+                break;
+            case "G-3":
+                if (octave === 0) {
+                    key20.pause();
+                    key20.currentTime = 0;
+                } else if (octave === 1) {
+                    key08.pause();
+                    key08.currentTime = 0;
+                }
+                break;
+            case "G#-3":
+                if (octave === 0) {
+                    key21.pause();
+                    key21.currentTime = 0;
+                } else if (octave === 1) {
+                    key09.pause();
+                    key09.currentTime = 0;
+                }
+                break;
+            case "A-3":
+                if (octave === 0) {
+                    key22.pause();
+                    key22.currentTime = 0;
+                } else if (octave === 1) {
+                    key10.pause();
+                    key10.currentTime = 0;
+                }
+                break;
+            case "A#-3":
+                if (octave === 0) {
+                    key23.pause();
+                    key23.currentTime = 0;
+                } else if (octave === 1) {
+                    key11.pause();
+                    key11.currentTime = 0;
+                }
+
+                break;
+            case "B-3":
+                if (octave === 0) {
+                    key24.pause();
+                    key24.currentTime = 0;
+                } else if (octave === 1) {
+                    key12.pause();
+                    key12.currentTime = 0;
+                }
+                break;
+
+            default:
+                break;
+        }
+    }
+});
 var checkbox = document.querySelector("#octave-switch");
 
 checkbox.addEventListener('change', function () {

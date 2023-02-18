@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("./public"));
 
 
-app.get("/keyboard", function (req, res) {
+app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/keyboard.html"), () => {
         console.log("Success!!");
     });
